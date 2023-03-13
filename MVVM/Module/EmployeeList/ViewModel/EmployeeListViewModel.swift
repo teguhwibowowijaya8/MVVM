@@ -7,21 +7,29 @@
 
 import Foundation
 
+protocol EmployeeListViewModelDelegate {
+    func onEmployeeFetched()
+}
+
 class EmployeeListViewModel {
     
     private var uri: String
     private var apiService: EmployeeListAPIProtocol
     private(set) var employeeList: EmployeeListModel? {
         didSet {
-            self.bindEmployeeListViewModelToController()
+//            self.bindEmployeeListViewModelToController()
+            self.delegate?.onEmployeeFetched()
         }
     }
     private(set) var errorMessage: String?
     
+    var delegate: EmployeeListViewModelDelegate?
+    
     var bindEmployeeListViewModelToController: () -> Void = {}
     
-    init(bindViewModelToController: @escaping () -> Void) {
-        self.bindEmployeeListViewModelToController = bindViewModelToController
+//    init(bindViewModelToController: @escaping () -> Void) {
+//        self.bindEmployeeListViewModelToController = bindViewModelToController
+    init() {
         self.uri = "https://dummy.restapiexample.com/api/v1/employees"
         apiService = GetAllEmployeeAPI(uri: self.uri)
         apiService.callApi { result in

@@ -22,7 +22,9 @@ class EmployeeListViewController: UIViewController {
     }
     
     func setupViewModel() {
-        viewModel = EmployeeListViewModel(bindViewModelToController: self.bindViewModelToController)
+//        viewModel = EmployeeListViewModel(bindViewModelToController: self.bindViewModelToController)
+        viewModel = EmployeeListViewModel()
+        viewModel.delegate = self
     }
     
     func setupTableView() {
@@ -32,11 +34,11 @@ class EmployeeListViewController: UIViewController {
         employeeListTableView.register(UINib(nibName: EmployeeCardTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: EmployeeCardTableViewCell.identifier)
     }
     
-    func bindViewModelToController() {
-        DispatchQueue.main.async {
-            self.employeeListTableView.reloadData()
-        }
-    }
+//    func bindViewModelToController() {
+//        DispatchQueue.main.async {
+//            self.employeeListTableView.reloadData()
+//        }
+//    }
 }
 
 extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -55,3 +57,10 @@ extension EmployeeListViewController: UITableViewDelegate, UITableViewDataSource
     }
 }
 
+extension EmployeeListViewController: EmployeeListViewModelDelegate {
+    func onEmployeeFetched() {
+        DispatchQueue.main.async {
+            self.employeeListTableView.reloadData()
+        }
+    }
+}

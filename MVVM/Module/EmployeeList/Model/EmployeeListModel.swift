@@ -26,9 +26,9 @@ struct Employee: Codable {
     let employeeAge: Int
     let profileImage: String
     
-    //    var employeeSalaryString: String {
-    //        return String(format: "$ %d", locale: .current, employeeSalary)
-    //    }
+    var employeeSalaryString: String {
+        return String(format: "$ %d", locale: .current, employeeSalary)
+    }
     
     enum CodingKeys: String, CodingKey {
         case id

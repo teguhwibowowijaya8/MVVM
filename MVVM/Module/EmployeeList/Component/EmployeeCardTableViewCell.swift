@@ -26,7 +26,7 @@ class EmployeeCardTableViewCell: UITableViewCell {
         setupEmployeeImage(imageUri: employee.profileImage)
         
         employeeNameLabel.text = employee.employeeName
-        employeeSalaryLabel.text = "\(employee.employeeSalary)"
+        employeeSalaryLabel.text = "My Salary is \(employee.employeeSalaryString)"
         employeeAgeLabel.text = "I am \(employee.employeeAge) years old"
     }
     
