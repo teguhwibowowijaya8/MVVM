@@ -3,27 +3,37 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		7AC034FC29BED1C4004878CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC034FB29BED1C4004878CE /* AppDelegate.swift */; };
 		7AC034FE29BED1C4004878CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC034FD29BED1C4004878CE /* SceneDelegate.swift */; };
-		7AC0350029BED1C4004878CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC034FF29BED1C4004878CE /* ViewController.swift */; };
+		7AC0350029BED1C4004878CE /* EmployeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC034FF29BED1C4004878CE /* EmployeeListViewController.swift */; };
 		7AC0350329BED1C4004878CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AC0350129BED1C4004878CE /* Main.storyboard */; };
 		7AC0350529BED1C7004878CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC0350429BED1C7004878CE /* Assets.xcassets */; };
 		7AC0350829BED1C7004878CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AC0350629BED1C7004878CE /* LaunchScreen.storyboard */; };
+		7AC0351529BED975004878CE /* EmployeeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC0351429BED975004878CE /* EmployeeListModel.swift */; };
+		7AC0351829BEDB2F004878CE /* GetAllEmployeesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC0351729BEDB2F004878CE /* GetAllEmployeesAPI.swift */; };
+		7AC0351E29BF009C004878CE /* EmployeeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC0351D29BF009C004878CE /* EmployeeListViewModel.swift */; };
+		7AC0352229BF19C6004878CE /* EmployeeCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC0352029BF19C6004878CE /* EmployeeCardTableViewCell.swift */; };
+		7AC0352329BF19C6004878CE /* EmployeeCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AC0352129BF19C6004878CE /* EmployeeCardTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7AC034F829BED1C4004878CE /* MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC034FB29BED1C4004878CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AC034FD29BED1C4004878CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7AC034FF29BED1C4004878CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7AC034FF29BED1C4004878CE /* EmployeeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewController.swift; sourceTree = "<group>"; };
 		7AC0350229BED1C4004878CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7AC0350429BED1C7004878CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AC0350729BED1C7004878CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7AC0350929BED1C7004878CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AC0351429BED975004878CE /* EmployeeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListModel.swift; sourceTree = "<group>"; };
+		7AC0351729BEDB2F004878CE /* GetAllEmployeesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllEmployeesAPI.swift; sourceTree = "<group>"; };
+		7AC0351D29BF009C004878CE /* EmployeeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewModel.swift; sourceTree = "<group>"; };
+		7AC0352029BF19C6004878CE /* EmployeeCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCardTableViewCell.swift; sourceTree = "<group>"; };
+		7AC0352129BF19C6004878CE /* EmployeeCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeCardTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,100 @@
 		7AC034FA29BED1C4004878CE /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				7AC034FB29BED1C4004878CE /* AppDelegate.swift */,
-				7AC034FD29BED1C4004878CE /* SceneDelegate.swift */,
-				7AC034FF29BED1C4004878CE /* ViewController.swift */,
-				7AC0350129BED1C4004878CE /* Main.storyboard */,
-				7AC0350429BED1C7004878CE /* Assets.xcassets */,
-				7AC0350629BED1C7004878CE /* LaunchScreen.storyboard */,
+				7AC0351029BED717004878CE /* MainDelegate */,
+				7AC0351629BEDAF6004878CE /* Networking */,
+				7AC0351229BED744004878CE /* Module */,
+				7AC0350F29BED6FE004878CE /* Storyboards */,
+				7AC0351129BED72B004878CE /* Assets */,
 				7AC0350929BED1C7004878CE /* Info.plist */,
 			);
 			path = MVVM;
+			sourceTree = "<group>";
+		};
+		7AC0350F29BED6FE004878CE /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7AC0350129BED1C4004878CE /* Main.storyboard */,
+				7AC0350629BED1C7004878CE /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		7AC0351029BED717004878CE /* MainDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				7AC034FB29BED1C4004878CE /* AppDelegate.swift */,
+				7AC034FD29BED1C4004878CE /* SceneDelegate.swift */,
+			);
+			path = MainDelegate;
+			sourceTree = "<group>";
+		};
+		7AC0351129BED72B004878CE /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				7AC0350429BED1C7004878CE /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		7AC0351229BED744004878CE /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				7AC0351B29BEDD3A004878CE /* EmployeeList */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		7AC0351329BED8FF004878CE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7AC0351429BED975004878CE /* EmployeeListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7AC0351629BEDAF6004878CE /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				7AC0351729BEDB2F004878CE /* GetAllEmployeesAPI.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		7AC0351929BEDD1B004878CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7AC034FF29BED1C4004878CE /* EmployeeListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7AC0351B29BEDD3A004878CE /* EmployeeList */ = {
+			isa = PBXGroup;
+			children = (
+				7AC0351F29BF19A9004878CE /* Component */,
+				7AC0351C29BF008E004878CE /* ViewModel */,
+				7AC0351329BED8FF004878CE /* Model */,
+				7AC0351929BEDD1B004878CE /* View */,
+			);
+			path = EmployeeList;
+			sourceTree = "<group>";
+		};
+		7AC0351C29BF008E004878CE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7AC0351D29BF009C004878CE /* EmployeeListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7AC0351F29BF19A9004878CE /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				7AC0352029BF19C6004878CE /* EmployeeCardTableViewCell.swift */,
+				7AC0352129BF19C6004878CE /* EmployeeCardTableViewCell.xib */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,7 +198,7 @@
 				};
 			};
 			buildConfigurationList = 7AC034F329BED1C4004878CE /* Build configuration list for PBXProject "MVVM" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -128,6 +223,7 @@
 				7AC0350829BED1C7004878CE /* LaunchScreen.storyboard in Resources */,
 				7AC0350529BED1C7004878CE /* Assets.xcassets in Resources */,
 				7AC0350329BED1C4004878CE /* Main.storyboard in Resources */,
+				7AC0352329BF19C6004878CE /* EmployeeCardTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +234,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AC0350029BED1C4004878CE /* ViewController.swift in Sources */,
+				7AC0350029BED1C4004878CE /* EmployeeListViewController.swift in Sources */,
 				7AC034FC29BED1C4004878CE /* AppDelegate.swift in Sources */,
 				7AC034FE29BED1C4004878CE /* SceneDelegate.swift in Sources */,
+				7AC0351529BED975004878CE /* EmployeeListModel.swift in Sources */,
+				7AC0352229BF19C6004878CE /* EmployeeCardTableViewCell.swift in Sources */,
+				7AC0351E29BF009C004878CE /* EmployeeListViewModel.swift in Sources */,
+				7AC0351829BEDB2F004878CE /* GetAllEmployeesAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +395,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,6 +424,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
