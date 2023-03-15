@@ -8,10 +8,10 @@
 import Foundation
 
 enum GetAllEmployeeAPIError: Error {
-    case invalidUri
-    case fetchError
-    case noData
-    case failDecodeData
+    case invalidUri(message: String)
+    case fetchError(message: String)
+    case noData(message: String)
+    case failDecodeData(message: String)
 }
 
 protocol EmployeeListAPIProtocol {
@@ -24,18 +24,18 @@ struct GetAllEmployeeAPI: EmployeeListAPIProtocol {
     
     func callApi(onCompletion: @escaping (Result<EmployeeListModel, GetAllEmployeeAPIError>) -> Void) {
         guard let url = URL(string: uri) else {
-            return onCompletion(.failure(GetAllEmployeeAPIError.invalidUri))
+            return onCompletion(.failure(GetAllEmployeeAPIError.invalidUri(message: "Invalid uri")))
         }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
-            print(error)
-            print(response)
-            if error != nil {
-                return onCompletion(.failure(GetAllEmployeeAPIError.fetchError))
+            if let error = error {
+                return onCompletion(.failure(GetAllEmployeeAPIError.fetchError(message: "\(error)")))
+            } else if let response = response as? HTTPURLResponse, response.statusCode > 299 {
+                return onCompletion(.failure(GetAllEmployeeAPIError.fetchError(message: "\(response.statusCode) Error")))
             }
             
             guard let data = data else {
-                return onCompletion(.failure(GetAllEmployeeAPIError.noData))
+                return onCompletion(.failure(GetAllEmployeeAPIError.noData(message: "No Data Available")))
             }
             
 //            do {
@@ -52,7 +52,7 @@ struct GetAllEmployeeAPI: EmployeeListAPIProtocol {
                 print(employeeData)
                 return onCompletion(.success(employeeData))
             } catch _ {
-                return onCompletion(.failure(GetAllEmployeeAPIError.failDecodeData))
+                return onCompletion(.failure(GetAllEmployeeAPIError.failDecodeData(message: "Failed to Decode Data")))
             }
             
         }.resume()

@@ -45,15 +45,16 @@ class EmployeeListViewModel {
             
         case .failure(let resultError):
             switch resultError {
-            case .failDecodeData:
-                self.errorMessage = "Failed to Decode API"
-            case .noData:
-                self.errorMessage = "No Data Found"
-            case .fetchError:
-                self.errorMessage = "Error Happen When Fetching The Data"
-            case .invalidUri:
-                self.errorMessage = "Invalid Uri"
+            case .failDecodeData(let message):
+                self.errorMessage = message
+            case .noData(let message):
+                self.errorMessage = message
+            case .fetchError(let message):
+                self.errorMessage = message
+            case .invalidUri(let message):
+                self.errorMessage = message
             }
         }
+        print(self.errorMessage)
     }
 }
